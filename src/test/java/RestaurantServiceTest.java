@@ -24,6 +24,12 @@ class RestaurantServiceTest {
         assertNotNull(restaurant);
 
     }
+    @Test
+    public void searching_for_existing_restaurant_should_fail_restaurant_object() throws restaurantNotFoundException {
+
+        assertNull(restaurant);
+
+    }
 
     @Test
     public void searching_for_non_existing_restaurant_should_throw_exception() throws restaurantNotFoundException {
