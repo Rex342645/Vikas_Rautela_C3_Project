@@ -16,6 +16,33 @@ class RestaurantTest {
         restaurant.addToMenu("Sweet corn soup", 119);
         restaurant.addToMenu("Vegetable lasagne", 269);
     }
+    @Test
+    public void total_Item_Cost_should_return_119() throws restaurantNotFoundException
+    {
+
+        List<String> orderedItems = Arrays.asList("Sweet corn soup");
+        int totalOrderCost = restaurant.totalItemCost(orderedItems);
+        assertEquals(totalOrderCost, 119);
+
+    }
+    @Test
+    public void total_Item_Cost_should_return_388() throws restaurantNotFoundException
+    {
+
+        List<String> orderedItems = Arrays.asList("Sweet corn soup","Vegetable lasagne");
+        int totalOrderCost = restaurant.totalItemCost(orderedItems);
+        assertEquals(totalOrderCost, 388);
+
+    }
+    @Test
+    public void total_Item_Cost_should_return_0() throws restaurantNotFoundException
+    {
+
+        List<String> orderedItems = Arrays.asList();
+        int totalOrderCost = restaurant.totalItemCost(orderedItems);
+        assertEquals(totalOrderCost, 0);
+
+    }
 
 
 
